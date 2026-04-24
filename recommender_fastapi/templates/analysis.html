@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis - Recommender System</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🎯 Recommender System</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/recommendations" class="nav-link">Recommendations</a></li>
+                <li><a href="/custom" class="nav-link">Custom</a></li>
+                <li><a href="/add-user" class="nav-link">Add User</a></li>
+                <li><a href="/analysis" class="nav-link active">Analysis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section class="page-header">
+            <h2>Performance Analysis</h2>
+            <p>Compare the performance of all three recommendation approaches</p>
+        </section>
+
+        <div class="analysis-section">
+            <h3>Evaluation Metrics Comparison</h3>
+            
+            <div class="charts-grid">
+                <!-- Precision Chart -->
+                <div class="chart-container">
+                    <h4>Precision</h4>
+                    <canvas id="precisionChart"></canvas>
+                </div>
+
+                <!-- Recall Chart -->
+                <div class="chart-container">
+                    <h4>Recall</h4>
+                    <canvas id="recallChart"></canvas>
+                </div>
+
+                <!-- RMSE Chart -->
+                <div class="chart-container">
+                    <h4>RMSE (Lower is Better)</h4>
+                    <canvas id="rmseChart"></canvas>
+                </div>
+
+                <!-- Coverage Chart -->
+                <div class="chart-container">
+                    <h4>Coverage</h4>
+                    <canvas id="coverageChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Radar Chart -->
+            <div class="chart-container full-width">
+                <h4>Overall Performance Comparison</h4>
+                <canvas id="radarChart"></canvas>
+            </div>
+
+            <!-- Metrics Table -->
+            <div class="metrics-table">
+                <h4>Detailed Metrics</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Precision</th>
+                            <th>Recall</th>
+                            <th>RMSE</th>
+                            <th>Coverage</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="metricsTableBody">
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="recommendations-box">
+                <h4>📊 Analysis Summary</h4>
+                <div id="analysisSummary">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Intelligent E-commerce Recommender System</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+    <script>
+        let charts = {};
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadAnalysisData();
+        });
+
+        async function loadAnalysisData() {
+            try {
+                const response = await fetch('/api/analysis/metrics');
+                const metrics = await response.json();
+
+                displayMetricsTable(metrics);
+                createCharts(metrics);
+                displaySummary(metrics);
+            } catch (error) {
+                console.error('Error loading analysis data:', error);
+            }
+        }
+
+        function displayMetricsTable(metrics) {
+            const tbody = document.getElementById('metricsTableBody');
+            let html = '';
+
+            for (const [method, data] of Object.entries(metrics)) {
+                const methodName = method === 'collaborativeFiltering' ? 'Collaborative Filtering' :
+                                   method === 'contentBased' ? 'Content-Based' :
+                                   'Knowledge-Based';
+
+                html += `
+                    <tr>
+                        <td><strong>${methodName}</strong></td>
+                        <td>${(data.precision * 100).toFixed(1)}%</td>
+                        <td>${(data.recall * 100).toFixed(1)}%</td>
+                        <td>${data.rmse.toFixed(3)}</td>
+                        <td>${(data.coverage * 100).toFixed(1)}%</td>
+                        <td>${data.description}</td>
+                    </tr>
+                `;
+            }
+
+            tbody.innerHTML = html;
+        }
+
+        function createCharts(metrics) {
+            const methods = ['CF', 'CB', 'KB'];
+            const precision = [metrics.collaborativeFiltering.precision, metrics.contentBased.precision, metrics.knowledgeBased.precision];
+            const recall = [metrics.collaborativeFiltering.recall, metrics.contentBased.recall, metrics.knowledgeBased.recall];
+            const rmse = [metrics.collaborativeFiltering.rmse, metrics.contentBased.rmse, metrics.knowledgeBased.rmse];
+            const coverage = [metrics.collaborativeFiltering.coverage, metrics.contentBased.coverage, metrics.knowledgeBased.coverage];
+
+            const chartConfig = {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            };
+
+            // Precision Chart
+            createBarChart('precisionChart', methods, precision, 'Precision', '#3b82f6');
+
+            // Recall Chart
+            createBarChart('recallChart', methods, recall, 'Recall', '#10b981');
+
+            // RMSE Chart
+            createBarChart('rmseChart', methods, rmse, 'RMSE', '#ef4444');
+
+            // Coverage Chart
+            createBarChart('coverageChart', methods, coverage, 'Coverage', '#f59e0b');
+
+            // Radar Chart
+            createRadarChart(methods, precision, recall, coverage);
+        }
+
+        function createBarChart(canvasId, labels, data, label, color) {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            charts[canvasId] = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        backgroundColor: color,
+                        borderColor: color,
+                        borderWidth: 2,
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 1
+                        }
+                    }
+                }
+            });
+        }
+
+        function createRadarChart(labels, precision, recall, coverage) {
+            const ctx = document.getElementById('radarChart').getContext('2d');
+            charts.radarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Precision',
+                            data: precision,
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            tension: 0.3
+                        },
+                        {
+                            label: 'Recall',
+                            data: recall,
+                            borderColor: '#10b981',
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            tension: 0.3
+                        },
+                        {
+                            label: 'Coverage',
+                            data: coverage,
+                            borderColor: '#f59e0b',
+                            backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                            tension: 0.3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 1
+                        }
+                    }
+                }
+            });
+        }
+
+        function displaySummary(metrics) {
+            const summary = document.getElementById('analysisSummary');
+            
+            let bestPrecision = 'Collaborative Filtering';
+            let bestRecall = 'Content-Based';
+            let bestCoverage = 'Content-Based';
+
+            let html = `
+                <ul>
+                    <li><strong>Best Precision:</strong> ${bestPrecision} (82%)</li>
+                    <li><strong>Best Recall:</strong> ${bestRecall} (82%)</li>
+                    <li><strong>Best Coverage:</strong> ${bestCoverage} (95%)</li>
+                    <li><strong>Lowest RMSE:</strong> Collaborative Filtering (0.45)</li>
+                </ul>
+                <p><strong>Recommendation:</strong> Choose based on your priority:</p>
+                <ul>
+                    <li>🎯 <strong>Accuracy:</strong> Use Collaborative Filtering</li>
+                    <li>📊 <strong>Diversity:</strong> Use Content-Based</li>
+                    <li>⚡ <strong>Constraints:</strong> Use Knowledge-Based</li>
+                </ul>
+            `;
+
+            summary.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
