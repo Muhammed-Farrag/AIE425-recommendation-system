@@ -1,0 +1,210 @@
+.detail-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  padding: 8px 20px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s;
+  border: 1px solid var(--glass-border);
+}
+.back-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.detail-image-wrapper {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  aspect-ratio: 4/3;
+}
+
+.detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+.detail-image-wrapper:hover .detail-image {
+  transform: scale(1.05);
+}
+
+.detail-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  background: rgba(0, 242, 254, 0.06);
+  margin-bottom: 1rem;
+}
+
+.detail-brand {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.detail-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+.detail-price-rating {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.detail-rating {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+.detail-rating .star {
+  color: var(--accent-orange);
+}
+
+.detail-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.detail-features h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+
+.feature-tag {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--accent-purple);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+/* Star Rating */
+.rating-section {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+.rating-section h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.star-rating {
+  display: flex;
+  gap: 6px;
+}
+
+.star-btn {
+  background: none;
+  font-size: 2rem;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  padding: 0;
+}
+.star-btn:hover,
+.star-btn.active {
+  color: var(--accent-orange);
+  transform: scale(1.2);
+}
+
+.rating-msg {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--accent-green);
+}
+
+/* Actions */
+.detail-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s var(--ease-out);
+}
+
+.action-btn.primary {
+  background: var(--gradient-primary);
+  color: #000;
+}
+.action-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 242, 254, 0.3);
+}
+
+.action-btn.secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+}
+.action-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Skeleton */
+.detail-skeleton {
+  height: 500px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(90deg, var(--bg-tertiary) 25%, rgba(255,255,255,0.04) 50%, var(--bg-tertiary) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@media (max-width: 768px) {
+  .detail-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
