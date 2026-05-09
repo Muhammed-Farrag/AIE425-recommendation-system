@@ -184,6 +184,7 @@ class DataLoader:
             "category_l2_name": row["category_l2_name"],
             "category_l3_name": row["category_l3_name"],
             "avg_rating":       float(row["avg_rating"]),
+            "image":            row["image"],
         }
 
     def get_texts_in_order(self) -> list[str]:
