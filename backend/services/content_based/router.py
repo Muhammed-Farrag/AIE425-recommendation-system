@@ -77,6 +77,7 @@ class ProductResult(BaseModel):
     avg_rating: float
     score: float
     rank: int
+    image: str
 
 class RecommendResponse(BaseModel):
     user_id: str
