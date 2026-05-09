@@ -10,7 +10,6 @@ class RecommendationResult:
     score: float
     rank: int
 
-
 class BaseRecommender(ABC):
     """
     Abstract base class for Content-Based Recommenders.
