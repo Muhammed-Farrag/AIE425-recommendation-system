@@ -1,8 +1,8 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import ProductDetailPage from './pages/ProductDetailPage';
-import RecommendationPage from './pages/RecommendationPage';
+import ForYouPage from './pages/ForYouPage';
 import KnowledgeBasedPage from './pages/KnowledgeBasedPage';
 
 export default function App() {
@@ -12,8 +12,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/product/:id" element={<ProductDetailPage />} />
-        <Route path="/recommendations" element={<RecommendationPage />} />
+        <Route path="/for-you" element={<ForYouPage />} />
         <Route path="/knowledge-based" element={<KnowledgeBasedPage />} />
+        {/* Backwards compat redirect */}
+        <Route path="/recommendations" element={<Navigate to="/for-you" replace />} />
       </Routes>
     </BrowserRouter>
   );
