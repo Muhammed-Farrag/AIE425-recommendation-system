@@ -407,6 +407,23 @@
   color: rgba(244, 114, 182, 0.6);
 }
 
+/* CB Algorithm buttons — green accent variant */
+.fyu-cb-btn:hover {
+  border-color: var(--accent-green);
+  color: var(--text-primary);
+}
+
+.fyu-cb-btn.active {
+  background: rgba(52, 211, 153, 0.1);
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.12);
+}
+
+.fyu-cb-btn.active .fyu-cf-btn-desc {
+  color: rgba(52, 211, 153, 0.6);
+}
+
 /* ── Drawer Footer ────────────────────────────────────────────── */
 .fyu-drawer-footer {
   padding: 1rem 1.5rem 1.5rem;

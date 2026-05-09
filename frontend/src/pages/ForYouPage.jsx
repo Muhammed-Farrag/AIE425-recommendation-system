@@ -2,8 +2,9 @@ import { useState, useEffect, useCallback } from 'react';
 import ForYouCard from '../components/ForYouCard';
 import {
   getCollaborativeRecommendations,
-  getRecommendations,
+  getContentBasedRecommendations,
   compareCollaborative,
+  compareContentBased,
 } from '../services/api';
 import {
   SlidersHorizontal,
@@ -41,6 +42,13 @@ const CF_METHODS = [
   { key: 'item_jaccard', label: 'Item-Based Jaccard', desc: 'Co-occurrence overlap on implicit feedback' },
 ];
 
+const CB_METHODS = [
+  { key: 'tfidf', label: 'TF-IDF', desc: 'Term frequency–inverse document frequency on product text' },
+  { key: 'lsa', label: 'LSA', desc: 'Latent Semantic Analysis for dimensionality-reduced topics' },
+  { key: 'word2vec', label: 'Word2Vec', desc: 'Dense word embeddings capturing semantic meaning' },
+  { key: 'feature', label: 'Feature-Based', desc: 'Structured attribute matching (brand, category, specs)' },
+];
+
 const CF_METHOD_DISPLAY = {
   user_cosine: 'User-Based Cosine',
   user_pearson: 'User-Based Pearson k-NN',
@@ -48,11 +56,19 @@ const CF_METHOD_DISPLAY = {
   item_jaccard: 'Item-Based Jaccard',
 };
 
+const CB_METHOD_DISPLAY = {
+  tfidf: 'TF-IDF',
+  lsa: 'LSA',
+  word2vec: 'Word2Vec',
+  feature: 'Feature-Based',
+};
+
 export default function ForYouPage() {
   // State
   const [userId, setUserId] = useState('U001');
   const [engine, setEngine] = useState('collaborative');
   const [cfMethod, setCfMethod] = useState('user_cosine');
+  const [cbMethod, setCbMethod] = useState('tfidf');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [results, setResults] = useState(null);
   const [compareResults, setCompareResults] = useState(null);
@@ -60,7 +76,7 @@ export default function ForYouPage() {
   const [compareMode, setCompareMode] = useState(false);
 
   // Fetch recommendations
-  const fetchFeed = useCallback(async (uid, eng, cf) => {
+  const fetchFeed = useCallback(async (uid, eng, cf, cb) => {
     setLoading(true);
     setResults(null);
     setCompareResults(null);
@@ -70,7 +86,7 @@ export default function ForYouPage() {
         const data = await getCollaborativeRecommendations(cf, { user_id: uid });
         setResults(data);
       } else {
-        const data = await getRecommendations(eng, { user_id: uid });
+        const data = await getContentBasedRecommendations(cb, { user_id: uid });
         setResults(data);
       }
     } catch (err) {
@@ -81,13 +97,13 @@ export default function ForYouPage() {
 
   // Auto-fetch on mount
   useEffect(() => {
-    fetchFeed(userId, engine, cfMethod);
+    fetchFeed(userId, engine, cfMethod, cbMethod);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Drawer handlers
   const applyAndClose = () => {
     setDrawerOpen(false);
-    fetchFeed(userId, engine, cfMethod);
+    fetchFeed(userId, engine, cfMethod, cbMethod);
   };
 
   const handleCompare = async () => {
@@ -96,7 +112,12 @@ export default function ForYouPage() {
     setResults(null);
     setCompareResults(null);
     try {
-      const data = await compareCollaborative({ user_id: userId });
+      let data;
+      if (engine === 'collaborative') {
+        data = await compareCollaborative({ user_id: userId });
+      } else {
+        data = await compareContentBased({ user_id: userId });
+      }
       setCompareResults(data);
       setCompareMode(true);
     } catch (err) {
@@ -109,9 +130,13 @@ export default function ForYouPage() {
   const currentLabel =
     engine === 'collaborative'
       ? CF_METHOD_DISPLAY[cfMethod] || cfMethod
-      : 'Content-Based (TF-IDF)';
+      : CB_METHOD_DISPLAY[cbMethod] || cbMethod;
 
   const currentUser = USERS.find((u) => u.id === userId);
+  const compareTitle =
+    engine === 'collaborative'
+      ? 'Comparing All 4 CF Methods'
+      : 'Comparing All 4 Content-Based Methods';
 
   return (
     <div className="fyu-page">
@@ -167,7 +192,7 @@ export default function ForYouPage() {
           <div className="fyu-compare-container">
             <h2 className="fyu-compare-heading animate-in">
               <GitCompare size={22} />
-              Comparing All 4 CF Methods
+              {compareTitle}
             </h2>
             <div className="fyu-compare-grid">
               {Object.entries(compareResults)
@@ -277,16 +302,35 @@ export default function ForYouPage() {
               </div>
             </div>
           )}
+
+          {/* CB Algorithm — only shown when engine = content-based */}
+          {engine === 'content-based' && (
+            <div className="fyu-drawer-section">
+              <label className="fyu-drawer-label">
+                <FileText size={14} /> Similarity Algorithm
+              </label>
+              <div className="fyu-drawer-cf-grid">
+                {CB_METHODS.map((m) => (
+                  <button
+                    key={m.key}
+                    className={`fyu-cf-btn fyu-cb-btn ${cbMethod === m.key ? 'active' : ''}`}
+                    onClick={() => setCbMethod(m.key)}
+                  >
+                    <span className="fyu-cf-btn-label">{m.label}</span>
+                    <span className="fyu-cf-btn-desc">{m.desc}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Drawer Footer */}
         <div className="fyu-drawer-footer">
-          {engine === 'collaborative' && (
-            <button className="fyu-drawer-compare-btn" onClick={handleCompare}>
-              <GitCompare size={16} />
-              Compare All Methods
-            </button>
-          )}
+          <button className="fyu-drawer-compare-btn" onClick={handleCompare}>
+            <GitCompare size={16} />
+            Compare All Methods
+          </button>
           <button className="fyu-drawer-apply-btn" onClick={applyAndClose}>
             <Zap size={16} />
             Apply & Load Feed

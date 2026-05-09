@@ -44,6 +44,10 @@ class RecommendationInput(BaseModel):
         "user_cosine",
         description="Collaborative filtering sub-method: user_cosine, user_pearson, item_cosine, item_jaccard",
     )
+    cb_method: Optional[str] = Field(
+        "tfidf",
+        description="Content-based sub-method: tfidf, lsa, word2vec, feature",
+    )
 
 
 class RecommendedProduct(BaseModel):

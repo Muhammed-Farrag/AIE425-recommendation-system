@@ -223,6 +223,30 @@ def get_knowledge_based_recommendations(kb_method: str, input_data: Recommendati
         )
 
 
+# ── Compare all content-based methods ────────────────────────────
+CB_METHODS = ["tfidf", "lsa", "word2vec", "feature"]
+
+
+@router.post("/content-based-compare", response_model=dict)
+def compare_content_based(input_data: RecommendationInput):
+    """
+    Run ALL four content-based methods on the same user and return
+    results side-by-side for comparison.
+    """
+    response = {"user_id": input_data.user_id}
+    for cb_key in CB_METHODS:
+        try:
+            results = _recommend_content_based(
+                user_id=input_data.user_id,
+                method=cb_key,
+            )
+        except Exception:
+            results = []
+        label = f"Content-Based ({cb_key.upper()})"
+        response[cb_key] = _build_response(label, input_data.user_id, results)
+    return response
+
+
 # ── General recommendation endpoint ─────────────────────────────
 @router.post("/{method}", response_model=RecommendationResponse)
 def get_recommendations(method: str, input_data: RecommendationInput):
@@ -242,13 +266,16 @@ def get_recommendations(method: str, input_data: RecommendationInput):
         return _build_response(label, input_data.user_id, results)
 
     elif method == "content-based":
+        cb = input_data.cb_method or "tfidf"
         try:
             results = _recommend_content_based(
                 user_id=input_data.user_id,
+                method=cb,
             )
         except (ValueError, KeyError) as e:
             raise HTTPException(status_code=400, detail=str(e))
-        return _build_response("Content-Based", input_data.user_id, results)
+        label = f"Content-Based ({cb.upper()})"
+        return _build_response(label, input_data.user_id, results)
 
     elif method == "knowledge-based":
         # Default to rule-based if no sub-method specified
