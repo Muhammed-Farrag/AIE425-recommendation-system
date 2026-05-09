@@ -41,4 +41,11 @@ export const getKnowledgeBasedRecommendations = (kbMethod, inputData) =>
 export const compareKnowledgeBased = (inputData) =>
   api.post('/recommend/knowledge-based-compare', inputData).then(r => r.data);
 
+// ── Collaborative Filtering ────────────────────────────────────
+export const getCollaborativeRecommendations = (cfMethod, inputData) =>
+  api.post('/recommend/collaborative', { ...inputData, cf_method: cfMethod }).then(r => r.data);
+
+export const compareCollaborative = (inputData) =>
+  api.post('/recommend/collaborative-compare', inputData).then(r => r.data);
+
 export default api;
