@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
 import ForYouCard from '../components/ForYouCard';
-import RecommendationCard from '../components/RecommendationCard';
 import {
   getCollaborativeRecommendations,
   getRecommendations,
@@ -181,7 +180,7 @@ export default function ForYouPage() {
                     </span>
                     <div className="fyu-compare-col-items">
                       {methodData.recommendations.map((item, i) => (
-                        <RecommendationCard key={i} item={item} index={i} />
+                        <ForYouCard key={i} item={item} index={i} />
                       ))}
                     </div>
                   </div>
