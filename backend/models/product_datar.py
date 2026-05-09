@@ -54,6 +54,7 @@ PRODUCTS: list[dict] = [
             "30-hour battery, active noise cancellation, multipoint Bluetooth, "
             "LDAC hi-res audio, touch controls, speak-to-chat, USB-C charging, foldable"
         ),
+        "image":    "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0002",
@@ -75,6 +76,7 @@ PRODUCTS: list[dict] = [
             "24-hour battery, Quiet and Aware modes, TriPort acoustic, "
             "multipoint connection, comfortable earcups, USB-C, built-in mic, foldable"
         ),
+        "image":    "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0003",
@@ -96,6 +98,7 @@ PRODUCTS: list[dict] = [
             "300 ohm impedance, open-back design, 38 mm transducers, "
             "replaceable cable, velour earpads, 6.35 mm adapter included, wired, studio-grade"
         ),
+        "image":    "https://images.unsplash.com/photo-1599669454699-248893623440?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0004",
@@ -117,6 +120,7 @@ PRODUCTS: list[dict] = [
             "Active Noise Cancellation, Transparency mode, adaptive EQ, "
             "Spatial Audio, 20-hour battery, Apple H1 chip, Lightning charging, mesh canopy"
         ),
+        "image":    "https://images.unsplash.com/photo-1625245488600-f03fef636a3c?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0005",
@@ -138,6 +142,7 @@ PRODUCTS: list[dict] = [
             "40 mm neodymium drivers, closed-back, foldable, 9.8 ft coiled cable, "
             "63 ohm impedance, wide frequency response, gold-plated plug, professional"
         ),
+        "image":    "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0006",
@@ -159,6 +164,7 @@ PRODUCTS: list[dict] = [
             "angled transducer, open-back, 120 ohm, replaceable cable, "
             "3.5 mm TRS, 6.35 mm adapter, velour pads, wide soundstage"
         ),
+        "image":    "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0007",
@@ -180,6 +186,7 @@ PRODUCTS: list[dict] = [
             "11-level adjustable ANC, 20-hour battery, 6-mic system, "
             "Alexa and Google built-in, USB-C, stainless steel, touch controls, multipoint"
         ),
+        "image":    "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0008",
@@ -201,6 +208,7 @@ PRODUCTS: list[dict] = [
             "50 mm open-back drivers, memory foam cushions, detachable cable, "
             "3-button remote, high-res audio certified, 32 ohm, fabric headband, wired"
         ),
+        "image":    "https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?w=500&h=500&fit=crop",
     },
 
     # --- In-Ear Headphones (6) ---
@@ -224,6 +232,7 @@ PRODUCTS: list[dict] = [
             "X3R transducer, 16 ohm, replaceable cable with 2-pin connector, "
             "3.5 mm plug, multiple ear tip sizes, resonator chamber, high-res, wired"
         ),
+        "image":    "https://images.unsplash.com/photo-1598331668826-20cecc596b86?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0010",
@@ -245,6 +254,7 @@ PRODUCTS: list[dict] = [
             "5 balanced armature drivers, 4-way crossover, magnesium shell, "
             "MMCX connector, 16 ohm, professional monitor tuning, multiple tips, wired"
         ),
+        "image":    "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0011",
@@ -266,6 +276,7 @@ PRODUCTS: list[dict] = [
             "10 mm drivers, IPX5 waterproof, 10-hour playtime, USB-C case, "
             "Bluetooth 5.3, touch controls, Soundcore app EQ, deep bass preset"
         ),
+        "image":    "https://images.unsplash.com/photo-1590658268037-6bf12f032f55?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0012",
@@ -287,6 +298,7 @@ PRODUCTS: list[dict] = [
             "active noise cancelling, 40-hour total battery, JBL Pure Bass, "
             "4-mic call pickup, ambient aware, USB-C, IPX4, Bluetooth 5.2"
         ),
+        "image":    "https://images.unsplash.com/photo-1631867675167-90a456a90863?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0013",
@@ -308,6 +320,7 @@ PRODUCTS: list[dict] = [
             "CustomTune personalised ANC, 6-hour battery, wireless charging case, "
             "IPX4, Bose Aware mode, touch controls, USB-C, Bluetooth 5.3"
         ),
+        "image":    "https://images.unsplash.com/photo-1649885756377-60b379044ea5?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0014",
@@ -329,6 +342,7 @@ PRODUCTS: list[dict] = [
             "QN2e + V2 dual processor ANC, LDAC hi-res, 8-hour battery, "
             "Qi wireless charging, speak-to-chat, multipoint, IPX4, USB-C"
         ),
+        "image":    "https://images.unsplash.com/photo-1645438835442-083f59bcce18?w=500&h=500&fit=crop",
     },
 
     # --- Wireless Earbuds (6) ---
@@ -352,6 +366,7 @@ PRODUCTS: list[dict] = [
             "H2 chip, Adaptive ANC, Personalized Spatial Audio, 6-hour battery, "
             "MagSafe charging case, IPX4, touch controls, USB-C, precision finding"
         ),
+        "image":    "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0016",
@@ -373,6 +388,7 @@ PRODUCTS: list[dict] = [
             "24-bit Hi-Fi audio, 3-mic ANC, 360 Audio, 8-hour battery, "
             "IPX7 water resistant, Galaxy ecosystem integration, USB-C, Bluetooth 5.3"
         ),
+        "image":    "https://images.unsplash.com/photo-1628815113969-0487917e8b76?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0017",
@@ -394,6 +410,7 @@ PRODUCTS: list[dict] = [
             "6-mic ANC, 40-hour total battery, Smart Ambient, Qi wireless charging, "
             "IPX5, JBL Pure Bass, Bluetooth 5.3, multipoint, USB-C"
         ),
+        "image":    "https://images.unsplash.com/photo-1608156639585-b3a776571bef?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0018",
@@ -415,6 +432,7 @@ PRODUCTS: list[dict] = [
             "coaxial dual driver, 98.5% ANC, 50-hour total battery, Qi wireless charging, "
             "IPX4, LDAC, HearID EQ, Bluetooth 5.3, USB-C"
         ),
+        "image":    "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0019",
@@ -436,6 +454,7 @@ PRODUCTS: list[dict] = [
             "custom 6-core chip, continuous ANC + transparency, 7-hour battery, "
             "Qi charging, IPX4, real-time translation, multipoint, USB-C, Bluetooth 5.0"
         ),
+        "image":    "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0020",
@@ -457,6 +476,7 @@ PRODUCTS: list[dict] = [
             "7 mm Sennheiser transducers, adaptive ANC, 28-hour total, "
             "Qi wireless charging, IPX4, aptX Adaptive, Sound Personalisation, USB-C"
         ),
+        "image":    "https://images.unsplash.com/photo-1655212798482-44a8024947ff?w=500&h=500&fit=crop",
     },
 
     # --- Soundbars (5) ---
@@ -480,6 +500,7 @@ PRODUCTS: list[dict] = [
             "7.1.2 ch Dolby Atmos, DTS:X, 500W, 360 Spatial Sound Mapping, "
             "HDMI eARC, Bluetooth, Wi-Fi, beamforming speakers, subwoofer out"
         ),
+        "image":    "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0022",
@@ -501,6 +522,7 @@ PRODUCTS: list[dict] = [
             "11.1.4 ch, wireless subwoofer + rear speakers, SpaceFit Sound Pro, "
             "Dolby Atmos, DTS:X, HDMI eARC, 656W, Q-Symphony with Samsung TV, Wi-Fi"
         ),
+        "image":    "https://images.unsplash.com/photo-1558537348-c0f8e733989d?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0023",
@@ -522,6 +544,7 @@ PRODUCTS: list[dict] = [
             "Dolby Atmos, TrueSpace 3D, HDMI eARC, Wi-Fi, Bluetooth, "
             "Alexa + Google built-in, Bose SimpleSync, USB-A, ADAPTiQ calibration"
         ),
+        "image":    "https://images.unsplash.com/photo-1507646227500-4d389e0fcb8d?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0024",
@@ -543,6 +566,7 @@ PRODUCTS: list[dict] = [
             "7.1.4 ch, detachable wireless rear satellites, MultiBeam, "
             "Dolby Atmos, DTS:X, 880W, HDMI eARC, Bluetooth, USB, wireless subwoofer"
         ),
+        "image":    "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0025",
@@ -564,6 +588,7 @@ PRODUCTS: list[dict] = [
             "3.1.2 ch, Dolby Atmos, IMAX Enhanced, wireless subwoofer, "
             "HDMI ARC, Bluetooth, 240W, DTS Play-Fi, Alexa compatible"
         ),
+        "image":    "https://images.unsplash.com/photo-1524170342594-eaab6c6f15f0?w=500&h=500&fit=crop",
     },
 
     # --- Portable Speakers (5) ---
@@ -587,6 +612,7 @@ PRODUCTS: list[dict] = [
             "IP67 waterproof, 20-hour battery, 20,000 mAh power bank, "
             "JBL PartyBoost, USB-C, JBL Pure Bass, passive radiator, Bluetooth 5.1"
         ),
+        "image":    "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0027",
@@ -608,6 +634,7 @@ PRODUCTS: list[dict] = [
             "IP67, PositionIQ EQ, 12-hour battery, USB-C, voice assistant, "
             "rLoop transducer, Bose SimpleSync, Bluetooth 5.1, lanyard loop"
         ),
+        "image":    "https://images.unsplash.com/photo-1589003077984-894e133dabab?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0028",
@@ -629,6 +656,7 @@ PRODUCTS: list[dict] = [
             "Extra Bass, dual passive radiators, 24-hour battery, IP67, "
             "LED lighting, Live Sound mode, Bluetooth 5.0, USB-C, Party Connect"
         ),
+        "image":    "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0029",
@@ -651,6 +679,7 @@ PRODUCTS: list[dict] = [
             "Spatial Audio, 5-driver system, 40W upward tweeter, aptX Adaptive, "
             "hi-res audio, IPX7, 12-hour battery, USB-C, Bluetooth 5.3"
         ),
+        "image":    "https://images.unsplash.com/photo-1558089687-f282ffcbc126?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0030",
@@ -672,6 +701,7 @@ PRODUCTS: list[dict] = [
             "2-way speaker system, IP67, 12-hour battery, JBL PartyBoost, "
             "USB-C charging, JBL Pure Bass, racetrack woofer, Bluetooth 5.1"
         ),
+        "image":    "https://images.unsplash.com/photo-1564424224827-cd24b8915874?w=500&h=500&fit=crop",
     },
 
     # =========================================================================
@@ -699,6 +729,7 @@ PRODUCTS: list[dict] = [
             "A17 Pro chip, 5× optical telephoto, titanium frame, USB 3 speeds, "
             "Action Button, ProRAW capture, Always-On Display, satellite SOS, 4K ProRes"
         ),
+        "image":    "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0032",
@@ -720,6 +751,7 @@ PRODUCTS: list[dict] = [
             "Snapdragon 8 Gen 3, 200 MP camera, 10× optical zoom, built-in S Pen, "
             "Galaxy AI, 5000 mAh battery, 45W charging, titanium frame, 6.8-inch QHD+"
         ),
+        "image":    "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0033",
@@ -741,6 +773,7 @@ PRODUCTS: list[dict] = [
             "Google Tensor G3, 50 MP + 48 MP + 48 MP cameras, 5× optical zoom, "
             "temperature sensor, 7-year software updates, Titan M2 chip, 5050 mAh, 30W"
         ),
+        "image":    "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0034",
@@ -762,6 +795,7 @@ PRODUCTS: list[dict] = [
             "50 MP OIS camera, 5000 mAh battery, IP67, Gorilla Glass 5, "
             "5G, 25W fast charging, 6.4-inch AMOLED, 4 years OS updates, Exynos 1380"
         ),
+        "image":    "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0035",
@@ -783,6 +817,7 @@ PRODUCTS: list[dict] = [
             "A16 Bionic, 48 MP main camera, Dynamic Island, USB-C, crash detection, "
             "satellite SOS, 6.1-inch Super Retina XDR, 5G, all-day battery"
         ),
+        "image":    "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0036",
@@ -804,6 +839,7 @@ PRODUCTS: list[dict] = [
             "Google Tensor G2, 64 MP OIS camera, 90 Hz OLED, wireless charging, "
             "5G, IP67, face unlock, 4385 mAh, 18W charging, 5 years security updates"
         ),
+        "image":    "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0037",
@@ -825,6 +861,7 @@ PRODUCTS: list[dict] = [
             "3.4-inch cover screen, Flex Mode, 12 MP camera, Snapdragon 8 Gen 2, "
             "IPX8, 5G, 25W charging, wireless charging, 6.7-inch foldable main display"
         ),
+        "image":    "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0038",
@@ -846,6 +883,7 @@ PRODUCTS: list[dict] = [
             "A15 Bionic, Touch ID, 5G, 12 MP camera, Smart HDR 4, 4.7-inch Retina, "
             "IP67, fast charging, Bluetooth 5.0, Ceramic Shield front"
         ),
+        "image":    "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=500&h=500&fit=crop",
     },
 
     # --- Phone Cases (4) ---
@@ -869,6 +907,7 @@ PRODUCTS: list[dict] = [
             "MagSafe compatible, polycarbonate back, microfibre lining, "
             "raised edges, optically clear, wireless charging compatible, precise cutouts"
         ),
+        "image":    "https://images.unsplash.com/photo-1601593346740-925612772716?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0040",
@@ -890,6 +929,7 @@ PRODUCTS: list[dict] = [
             "MIL-STD-810G, dual-layer construction, raised camera lip, "
             "wireless charging compatible, anti-scratch, precise cutouts, slim profile"
         ),
+        "image":    "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0041",
@@ -911,6 +951,7 @@ PRODUCTS: list[dict] = [
             "aramid fibre reinforced, 0.35 mm slim, 10-foot drop tested, "
             "wireless charging compatible, raised bezel, lightweight, UV-resistant"
         ),
+        "image":    "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0042",
@@ -932,6 +973,7 @@ PRODUCTS: list[dict] = [
             "built-in ring kickstand, S Pen compatible cutout, textured grip, "
             "wireless charging compatible, raised lips, TPU + PC, official Samsung"
         ),
+        "image":    "https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?w=500&h=500&fit=crop",
     },
 
     # --- Chargers & Cables (5) ---
@@ -955,6 +997,7 @@ PRODUCTS: list[dict] = [
             "120W total, 3-port (2C + 1A), GaN III, AI power distribution, "
             "PowerIQ 4.0, foldable plug, USB-C 100W single port, compact desktop design"
         ),
+        "image":    "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0044",
@@ -976,6 +1019,7 @@ PRODUCTS: list[dict] = [
             "20W USB-C PD, fast charging for iPhone, foldable plug, "
             "USB-C, compact design, Apple certified, universal voltage 100-240V"
         ),
+        "image":    "https://images.unsplash.com/photo-1628815114220-718cf5e8d2d5?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0045",
@@ -997,6 +1041,7 @@ PRODUCTS: list[dict] = [
             "240W USB PD 3.1, 480 Mbps data, nylon braided, 6 ft, "
             "35,000 bend cycles, E-Marker chip, USB-C to USB-C, universal compatibility"
         ),
+        "image":    "https://images.unsplash.com/photo-1601999109332-542b18dbbc21?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0046",
@@ -1018,6 +1063,7 @@ PRODUCTS: list[dict] = [
             "15W MagSafe, Apple Watch fast charge, 5W AirPods pad, MFi certified, "
             "USB-C cable included, StandBy compatible, folding legs, compact footprint"
         ),
+        "image":    "https://images.unsplash.com/photo-1615526675159-e248c3021d3f?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0047",
@@ -1039,6 +1085,7 @@ PRODUCTS: list[dict] = [
             "45W Super Fast Charging 2.0, PPS protocol, USB-C PD 3.0, "
             "foldable plug, GaN design, 100-240V universal voltage, compact"
         ),
+        "image":    "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500&h=500&fit=crop",
     },
 
     # --- Screen Protectors (4) ---
@@ -1062,6 +1109,7 @@ PRODUCTS: list[dict] = [
             "ion-strengthened glass, 9H hardness, case compatible, TrueClear coating, "
             "anti-fingerprint, easy install tray, full display coverage, touch sensitive"
         ),
+        "image":    "https://images.unsplash.com/photo-1601972602237-8c79241e468b?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0049",
@@ -1083,6 +1131,7 @@ PRODUCTS: list[dict] = [
             "30-degree privacy angle, 9H tempered glass, S Pen compatible, "
             "anti-fingerprint coating, bubble-free install, case compatible, oleophobic"
         ),
+        "image":    "https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0050",
@@ -1104,6 +1153,7 @@ PRODUCTS: list[dict] = [
             "EasyOn installation tray, 0.33 mm tempered glass, oleophobic coating, "
             "9H hardness, 2-pack, case compatible, anti-bubble, touch sensitivity preserved"
         ),
+        "image":    "https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0051",
@@ -1125,6 +1175,7 @@ PRODUCTS: list[dict] = [
             "full-display coverage, in-display fingerprint compatible, 9H hardness, "
             "oleophobic coating, anti-scratch, edge-to-edge, case compatible"
         ),
+        "image":    "https://images.unsplash.com/photo-1512054502232-10a0a035d672?w=500&h=500&fit=crop",
     },
 
     # --- Power Banks (4) ---
@@ -1148,6 +1199,7 @@ PRODUCTS: list[dict] = [
             "26,800 mAh, 140W + 60W USB-C, LCD display, USB-A 22.5W, "
             "PowerIQ 4.0, 3-port simultaneous charging, bi-directional USB-C, compact"
         ),
+        "image":    "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0053",
@@ -1169,6 +1221,7 @@ PRODUCTS: list[dict] = [
             "MagSafe wireless, 10,000 mAh, 7.5W MagSafe output, USB-C recharge, "
             "LED indicator, compact form factor, kickstand mode, MFi certified"
         ),
+        "image":    "https://images.unsplash.com/photo-1585338447937-7082f8fc763d?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0054",
@@ -1190,6 +1243,7 @@ PRODUCTS: list[dict] = [
             "built-in USB-C plug, 10,000 mAh, 22.5W USB-C output, 12W USB-A, "
             "foldable connector, LED indicator, 196g, compact, simultaneous charging"
         ),
+        "image":    "https://images.unsplash.com/photo-1625315714730-fae74fae9c10?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0055",
@@ -1211,6 +1265,7 @@ PRODUCTS: list[dict] = [
             "25W Super Fast Charging, 10,000 mAh, USB-C in/out, USB-A 15W, "
             "Samsung official, 2-way fast charge, compact, LED indicator"
         ),
+        "image":    "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=500&h=500&fit=crop",
     },
 
     # =========================================================================
@@ -1238,6 +1293,7 @@ PRODUCTS: list[dict] = [
             "M3 Pro chip, 18 GB unified memory, 14-inch Liquid Retina XDR, "
             "18-hour battery, MagSafe 3, Thunderbolt 4 ×3, HDMI, SD card, 120 Hz ProMotion"
         ),
+        "image":    "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0057",
@@ -1259,6 +1315,7 @@ PRODUCTS: list[dict] = [
             "Core i9-13900H, RTX 4070 8GB, 32 GB DDR5, OLED 3.5K 120 Hz, "
             "Thunderbolt 4 ×2, 86 Whr battery, 130W USB-C charging, CNC aluminium"
         ),
+        "image":    "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0058",
@@ -1280,6 +1337,7 @@ PRODUCTS: list[dict] = [
             "Core i7-1365U, 16 GB LPDDR5, 14-inch IPS 2.8K, MIL-STD-810H, "
             "Thunderbolt 4 ×2, 57 Whr battery, 1.12 kg, backlit keyboard, 4G LTE option"
         ),
+        "image":    "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0059",
@@ -1301,6 +1359,7 @@ PRODUCTS: list[dict] = [
             "Ryzen 9 8945HS, RTX 4070 8GB, 3K OLED 120 Hz, 32 GB DDR5, "
             "1 TB PCIe 4.0, MUX Switch, Thunderbolt 4, 73 Whr battery, 1.65 kg"
         ),
+        "image":    "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0060",
@@ -1322,6 +1381,7 @@ PRODUCTS: list[dict] = [
             "Core Ultra 7 155H, 2.8K OLED touch, 360° hinge, 32 GB, "
             "Thunderbolt 4 ×2, HP Tilt Pen included, 83 Whr, Intel Arc iGPU, fingerprint"
         ),
+        "image":    "https://images.unsplash.com/photo-1544731612-de7f96afe55f?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0061",
@@ -1343,6 +1403,7 @@ PRODUCTS: list[dict] = [
             "Ryzen 7 5700U, 16 GB DDR4, 512 GB SSD, 15.6-inch FHD IPS, "
             "USB-C, HDMI, Wi-Fi 6, Bluetooth 5.1, backlit keyboard, 56 Whr"
         ),
+        "image":    "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0062",
@@ -1364,6 +1425,7 @@ PRODUCTS: list[dict] = [
             "M2 chip, 8-core GPU, 8 GB unified memory, 13.6-inch Liquid Retina, "
             "fanless design, 18-hour battery, MagSafe, Thunderbolt ×2, 1080p webcam"
         ),
+        "image":    "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0063",
@@ -1385,6 +1447,7 @@ PRODUCTS: list[dict] = [
             "Core i5-1135G7, 8 GB DDR4, 256 GB SSD, 15.6-inch anti-glare FHD, "
             "Wi-Fi 5, Bluetooth 5.0, USB-A ×3, USB-C, HDMI, 54 Whr battery"
         ),
+        "image":    "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&h=500&fit=crop",
     },
 
     # --- Monitors (5) ---
@@ -1408,6 +1471,7 @@ PRODUCTS: list[dict] = [
             "27-inch 4K Nano IPS, 160 Hz, HDMI 2.1 ×2, DisplayPort 1.4, "
             "NVIDIA G-Sync, AMD FreeSync Premium, 1ms GtG, USB-C 90W, HDR600, VESA"
         ),
+        "image":    "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0065",
@@ -1429,6 +1493,7 @@ PRODUCTS: list[dict] = [
             "27-inch 4K IPS, Delta E < 2, 100% sRGB, 90W USB-C, Thunderbolt 4, "
             "USB hub built-in, HDMI 2.0, DisplayPort 1.4, height adjustable, VESA, 60 Hz"
         ),
+        "image":    "https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0066",
@@ -1450,6 +1515,7 @@ PRODUCTS: list[dict] = [
             "32-inch 1000R curved QLED, 2560×1440, 240 Hz, 1ms GtG, "
             "G-Sync compatible, FreeSync Premium Pro, HDR600, HDMI 2.0 ×2, DisplayPort 1.4"
         ),
+        "image":    "https://images.unsplash.com/photo-1616711906333-23cf6b04d35b?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0067",
@@ -1471,6 +1537,7 @@ PRODUCTS: list[dict] = [
             "34-inch QHD IPS curved, 3440×1440, 160 Hz, FreeSync Premium, "
             "HDR10, USB-C 65W, HDMI ×2, DisplayPort, 1ms GtG, KVM switch, VESA"
         ),
+        "image":    "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0068",
@@ -1492,6 +1559,7 @@ PRODUCTS: list[dict] = [
             "27-inch IPS 1440p, Delta E < 2, 100% sRGB, 100% Rec.709, "
             "75 Hz, HDMI ×2, DisplayPort, USB hub, full ergonomic stand, HDR10, VESA"
         ),
+        "image":    "https://images.unsplash.com/photo-1586210579191-33b45e38fa2c?w=500&h=500&fit=crop",
     },
 
     # --- Keyboards & Mice (4) ---
@@ -1515,6 +1583,7 @@ PRODUCTS: list[dict] = [
             "spherical key dish, smart backlight, multi-device ×3, Easy Switch, "
             "USB-C, 10-day battery (backlit), USB receiver + Bluetooth, Windows/macOS"
         ),
+        "image":    "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0070",
@@ -1536,6 +1605,7 @@ PRODUCTS: list[dict] = [
             "8000 DPI sensor, MagSpeed scrolling, quiet clicks, thumb wheel, "
             "multi-device ×3, USB-C, 70-day battery, Easy Switch, Bolt USB receiver"
         ),
+        "image":    "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0071",
@@ -1557,6 +1627,7 @@ PRODUCTS: list[dict] = [
             "Touch ID, scissor mechanism, numeric keypad, USB-C charging, "
             "Bluetooth, 1 mm key travel, Lightning to USB-C cable included, full size"
         ),
+        "image":    "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0072",
@@ -1578,6 +1649,7 @@ PRODUCTS: list[dict] = [
             "1000 DPI optical, 12-month battery, nano USB receiver storage, "
             "ambidextrous, 2.4 GHz wireless, 3 button + scroll, plug and play"
         ),
+        "image":    "https://images.unsplash.com/photo-1605773527852-c546a8584ea3?w=500&h=500&fit=crop",
     },
 
     # --- Webcams (3) ---
@@ -1601,6 +1673,7 @@ PRODUCTS: list[dict] = [
             "4K 30fps, 1080p 60fps, HDR RightLight 3, Windows Hello, "
             "5× digital zoom, noise-cancelling dual mic, USB-C, privacy shutter, 90° FOV"
         ),
+        "image":    "https://images.unsplash.com/photo-1596742578443-7682ef5251cd?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0074",
@@ -1622,6 +1695,7 @@ PRODUCTS: list[dict] = [
             "AI auto-framing, Sony Starvis 1080p 60fps, HDR, 65° / 78° / 90° FOV, "
             "noise-cancelling mic, USB-C, privacy cover, plug and play, 6× zoom"
         ),
+        "image":    "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0075",
@@ -1643,6 +1717,7 @@ PRODUCTS: list[dict] = [
             "4K 30fps, Sony STARVIS 2, AI auto-framing, background blur, "
             "4× digital zoom, dual stereo mic, USB-C, magnetic mount, privacy shutter"
         ),
+        "image":    "https://images.unsplash.com/photo-1623949556303-b0d17d198863?w=500&h=500&fit=crop",
     },
 
     # =========================================================================
@@ -1669,6 +1744,7 @@ PRODUCTS: list[dict] = [
             "40 MP full-frame CMOS, 40fps continuous, dual UHS-II SD, "
             "6K RAW video, in-body 8-stop stabilisation, dual pixel CMOS AF, Canon RF mount"
         ),
+        "image":    "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0077",
@@ -1690,6 +1766,7 @@ PRODUCTS: list[dict] = [
             "33 MP BSI-CMOS, 10fps, 4K 60fps video, 5-axis IBIS, dual card slots, "
             "real-time eye AF, USB-C PD charging, CFexpress Type A + SD, Sony E-mount"
         ),
+        "image":    "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0078",
@@ -1711,6 +1788,7 @@ PRODUCTS: list[dict] = [
             "24.5 MP partial stacked CMOS, 120fps, 6K ProRes RAW, "
             "8-stop IBIS, subject detection AF, dual card slots, USB-C, Nikon Z-mount"
         ),
+        "image":    "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0079",
@@ -1732,6 +1810,7 @@ PRODUCTS: list[dict] = [
             "32.5 MP APS-C, 10fps, 45-point all-cross AF, 4K 30fps UHD video, "
             "dual UHS-II SD, optical viewfinder, articulating touchscreen, Canon EF-S mount"
         ),
+        "image":    "https://images.unsplash.com/photo-1564466809058-bf4114d55352?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0080",
@@ -1753,6 +1832,7 @@ PRODUCTS: list[dict] = [
             "20.9 MP sensor from D500, 8fps, 100 RAW buffer, 4K UHD video, "
             "Nikon AF-P compatible, tilting touchscreen, dual SD slots, Nikon F-mount"
         ),
+        "image":    "https://images.unsplash.com/photo-1617005082133-548c4dd27f35?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0081",
@@ -1774,6 +1854,7 @@ PRODUCTS: list[dict] = [
             "5.3K60 video, 27 MP photo, waterproof to 10m, HyperSmooth 6.0, "
             "Max Lens Mod compatible, Bluetooth + Wi-Fi, USB-C, 2.27-hour battery"
         ),
+        "image":    "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0082",
@@ -1795,6 +1876,7 @@ PRODUCTS: list[dict] = [
             "1/1.3-inch CMOS, 4K 120fps, RockSteady 3.0+ stabilisation, "
             "10m waterproof, -20°C cold resistance, magnetic quick-release, USB-C"
         ),
+        "image":    "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0083",
@@ -1816,6 +1898,7 @@ PRODUCTS: list[dict] = [
             "50mm f/1.8, STM autofocus motor, 9-blade aperture diaphragm, "
             "Canon RF mount, 43mm filter thread, 160g, weather sealing, optical IS"
         ),
+        "image":    "https://images.unsplash.com/photo-1617005082133-548c4dd27f35?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0084",
@@ -1837,6 +1920,7 @@ PRODUCTS: list[dict] = [
             "24-70mm f/2.8, XA element, dual linear AF motors, 9-blade aperture, "
             "weather sealing, 695g, 82mm filter, Sony E-mount, optical IS compatible"
         ),
+        "image":    "https://images.unsplash.com/photo-1495707902641-75cac588d2e9?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0085",
@@ -1858,6 +1942,7 @@ PRODUCTS: list[dict] = [
             "85mm f/1.8, Nikon Z-mount, 9-blade diaphragm, internal focus, "
             "weather sealed, nano crystal coat, 67mm filter, 470g, silent AF, 0.8m MFD"
         ),
+        "image":    "https://images.unsplash.com/photo-1606986628253-49e5c32b45df?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0086",
@@ -1879,6 +1964,7 @@ PRODUCTS: list[dict] = [
             "5 kg payload, flexible legs, Arca-Swiss compatible quick release, "
             "bubble level, 360° ball head, wrap around mounting, compact when folded"
         ),
+        "image":    "https://images.unsplash.com/photo-1542567455-cd733f23fbb1?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0087",
@@ -1900,6 +1986,7 @@ PRODUCTS: list[dict] = [
             "90° column rotation, 4-section aluminium legs, 163 cm max height, "
             "7 kg load capacity, Easy Link connector, half ball leg angle, 1.9 kg"
         ),
+        "image":    "https://images.unsplash.com/photo-1616423640778-28d1b53229bd?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0088",
@@ -1921,6 +2008,7 @@ PRODUCTS: list[dict] = [
             "carbon fibre, 39 cm folded length, 5-leg hub, 6 cm low-angle height, "
             "Arca-Swiss compatible, 1625g, 9 kg payload, aluminium ball head, carrying bag"
         ),
+        "image":    "https://images.unsplash.com/photo-1617912324022-c41543e5fa09?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0089",
@@ -1942,6 +2030,7 @@ PRODUCTS: list[dict] = [
             "under 249g, 48 MP f/1.7, 4K 100fps, 34-min flight time, "
             "omnidirectional obstacle sensing, 20 km video transmission, RC 2 included"
         ),
+        "image":    "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0090",
@@ -1963,6 +2052,7 @@ PRODUCTS: list[dict] = [
             "5.3K60 video, HyperSmooth 5.0, waterproof to 10m, 8× slow motion, "
             "integrated mounting tabs, internal battery, Wi-Fi, Bluetooth, USB-C"
         ),
+        "image":    "https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=500&h=500&fit=crop",
     },
 
     # =========================================================================
@@ -1989,6 +2079,7 @@ PRODUCTS: list[dict] = [
             "10.1-inch HD display, motorised rotating base, 13 MP camera, "
             "Alexa, Zigbee hub, directional speakers, privacy shutter, Wi-Fi 5"
         ),
+        "image":    "https://images.unsplash.com/photo-1543512214-318c7553f230?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0092",
@@ -2010,6 +2101,7 @@ PRODUCTS: list[dict] = [
             "10-inch HD display, 6.5 MP camera, Face Match, Google Assistant, "
             "Nest cam integration, stereo speakers, Wi-Fi, Bluetooth, Thread"
         ),
+        "image":    "https://images.unsplash.com/photo-1558089687-f282ffcbc126?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0093",
@@ -2031,6 +2123,7 @@ PRODUCTS: list[dict] = [
             "3-speaker 360° audio, built-in Zigbee hub, Alexa Guard, "
             "temperature sensor, Wi-Fi 5, Bluetooth 5.0, 3.5 mm aux output, fabric design"
         ),
+        "image":    "https://images.unsplash.com/photo-1512446816042-444d641267d4?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0094",
@@ -2052,6 +2145,7 @@ PRODUCTS: list[dict] = [
             "75 mm woofer + 19 mm tweeter, Media EQ, Google Cast, "
             "Google Assistant, Wi-Fi 5, Bluetooth 5.0, fabric exterior, 3 mics"
         ),
+        "image":    "https://images.unsplash.com/photo-1543512214-318c7553f230?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0095",
@@ -2073,6 +2167,7 @@ PRODUCTS: list[dict] = [
             "16M colours, Zigbee bridge, 3 smart bulbs, voice control, "
             "Bluetooth fallback, Entertainment sync, geofencing, app automation, dimming"
         ),
+        "image":    "https://images.unsplash.com/photo-1558002038-1055907df827?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0096",
@@ -2094,6 +2189,7 @@ PRODUCTS: list[dict] = [
             "4K Dolby Vision HDR pass-through, 4 HDMI inputs, < 60ms sync latency, "
             "Hue integration, Wi-Fi, iOS/Android app, automatic game/movie/music modes"
         ),
+        "image":    "https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0097",
@@ -2115,6 +2211,7 @@ PRODUCTS: list[dict] = [
             "Matter compatible, energy monitoring, 15A, no hub required, "
             "Alexa/Google/Apple HomeKit, schedule automation, Wi-Fi, compact design"
         ),
+        "image":    "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0098",
@@ -2136,6 +2233,7 @@ PRODUCTS: list[dict] = [
             "compact side-by-side fit, energy monitoring, 15A, Alexa native, "
             "schedule and timer, Wi-Fi, no hub, away mode automation"
         ),
+        "image":    "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0099",
@@ -2157,6 +2255,7 @@ PRODUCTS: list[dict] = [
             "1080p HDR, on-device AI detection, 3-hour free event history, "
             "IP54 weather resistant, night vision, two-way audio, Wi-Fi, Google Home"
         ),
+        "image":    "https://images.unsplash.com/photo-1558002038-1055907df827?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0100",
@@ -2178,6 +2277,7 @@ PRODUCTS: list[dict] = [
             "2-year battery life, 1080p HDR, bird's-eye zone detection, "
             "two-way audio, night vision, Alexa, Blink Sync Module 2 included, IP65"
         ),
+        "image":    "https://images.unsplash.com/photo-1580745294949-1c1f4b4cd817?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0101",
@@ -2199,6 +2299,7 @@ PRODUCTS: list[dict] = [
             "LED display, temperature sensor, improved 1.73-inch speaker, "
             "Alexa, tap gestures, Wi-Fi 5, Bluetooth 5.0, 3.5 mm output, Motion detect"
         ),
+        "image":    "https://images.unsplash.com/photo-1543512214-318c7553f230?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0102",
@@ -2220,6 +2321,7 @@ PRODUCTS: list[dict] = [
             "360° pan, 114° tilt, 1080p, person detection, night vision 9m, "
             "two-way audio, SD card local storage, cloud optional, Alexa/Google, Wi-Fi"
         ),
+        "image":    "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0103",
@@ -2241,6 +2343,7 @@ PRODUCTS: list[dict] = [
             "16M colours, 1600 lumens, individually addressable segments, "
             "Hue bridge required, extensible to 10m, adhesive backing, cuts to fit, 2m base"
         ),
+        "image":    "https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0104",
@@ -2262,6 +2365,7 @@ PRODUCTS: list[dict] = [
             "PM2.5, CO, humidity, temperature, TVOC sensors, LED ring display, "
             "Alexa integration, smart home automation, historical trends, Wi-Fi"
         ),
+        "image":    "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0105",
@@ -2283,6 +2387,7 @@ PRODUCTS: list[dict] = [
             "16M colours, 2500-6500K tunable white, E26 base, no hub required, "
             "800 lumens, Wi-Fi, Alexa/Google/SmartThings, schedule, away mode"
         ),
+        "image":    "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=500&h=500&fit=crop",
     },
 
     # =========================================================================
@@ -2310,6 +2415,7 @@ PRODUCTS: list[dict] = [
             "dual hot-swap battery, ANC, transparency mode, 40 mm Nova drivers, "
             "lossless 2.4 GHz + Bluetooth, 22-hour battery, parametric EQ, base station"
         ),
+        "image":    "https://images.unsplash.com/photo-1599669454699-248893623440?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0107",
@@ -2331,6 +2437,7 @@ PRODUCTS: list[dict] = [
             "300-hour battery, dual-chamber drivers, DTS Headphone:X, "
             "2.4 GHz wireless, noise-cancelling detachable mic, aluminium frame, USB-A"
         ),
+        "image":    "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0108",
@@ -2352,6 +2459,7 @@ PRODUCTS: list[dict] = [
             "2.4 GHz + Bluetooth simultaneous, TriForce Titanium drivers, "
             "detachable mic, Razer Synapse EQ, 70-hour battery, USB-C, PC/PS5/Switch"
         ),
+        "image":    "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0109",
@@ -2373,6 +2481,7 @@ PRODUCTS: list[dict] = [
             "60g weight, HERO 2 sensor 32K DPI, LIGHTSPEED 2.4 GHz, "
             "95-hour battery, PTFE feet, USB-C, 5 buttons, LightSync RGB, zero smoothing"
         ),
+        "image":    "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0110",
@@ -2394,6 +2503,7 @@ PRODUCTS: list[dict] = [
             "81g, Focus X 26K DPI sensor, Razer HyperSpeed 2.4 GHz, "
             "280-hour battery, Speedflex cable option, USB-C, Bluetooth, right-handed"
         ),
+        "image":    "https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0111",
@@ -2415,6 +2525,7 @@ PRODUCTS: list[dict] = [
             "74g honeycomb, IP54 splashproof, TrueMove Air 18K DPI, "
             "2.4 GHz + Bluetooth, 80-hour battery, 9 programmable buttons, USB-C"
         ),
+        "image":    "https://images.unsplash.com/photo-1527814050087-3793815479db?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0112",
@@ -2437,6 +2548,7 @@ PRODUCTS: list[dict] = [
             "4000 Hz wireless polling, Razer Yellow switches, per-key RGB Chroma, "
             "media dial, macro keys, USB passthrough, aluminium top plate, 2.4 GHz + BT"
         ),
+        "image":    "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0113",
@@ -2459,6 +2571,7 @@ PRODUCTS: list[dict] = [
             "OmniPoint 2.0 adjustable switches, 0.2–3.8mm actuation, "
             "TKL layout, 2.4 GHz + Bluetooth, per-key RGB, OLED smartdisplay, USB-C, 36h battery"
         ),
+        "image":    "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0114",
@@ -2480,6 +2593,7 @@ PRODUCTS: list[dict] = [
             "65% layout, HyperX Red linear, aluminium body, per-key RGB, "
             "detachable USB-C, HyperX NGENUITY software, N-key rollover, 3 switch options"
         ),
+        "image":    "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0115",
@@ -2501,6 +2615,7 @@ PRODUCTS: list[dict] = [
             "27-inch 1440p IPS, 240 Hz, 1ms GtG, G-Sync Ultimate, 384 zones HDR1000, "
             "HDMI 2.0, DisplayPort 1.4, USB hub, ASUS Aura RGB, ELMB-Sync, VESA"
         ),
+        "image":    "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0116",
@@ -2522,6 +2637,7 @@ PRODUCTS: list[dict] = [
             "27-inch 1440p Nano IPS, 240 Hz, 1ms GtG, 98% DCI-P3, "
             "G-Sync compatible, FreeSync Premium, HDMI 2.0 ×2, DisplayPort 1.4, USB hub"
         ),
+        "image":    "https://images.unsplash.com/photo-1616711906333-23cf6b04d35b?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0117",
@@ -2544,6 +2660,7 @@ PRODUCTS: list[dict] = [
             "swappable stick caps, back paddles, adaptive trigger adjustment, "
             "haptic feedback, built-in mic, USB-C cable included, BT 5.1, profile saving"
         ),
+        "image":    "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0118",
@@ -2565,6 +2682,7 @@ PRODUCTS: list[dict] = [
             "4 interchangeable paddles, 3 thumbstick tensions, hair trigger locks, "
             "40-hour battery, USB-C, Bluetooth + USB, 3 on-board profiles, charging dock"
         ),
+        "image":    "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0119",
@@ -2587,6 +2705,7 @@ PRODUCTS: list[dict] = [
             "Mecha-Tactile face buttons, 4 multi-function buttons, per-key Chroma RGB, "
             "hair trigger mode, 3.5 mm audio jack, USB-C wired, Xbox + PC, rubberised grip"
         ),
+        "image":    "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=500&h=500&fit=crop",
     },
     {
         "product_id":   "P0120",
@@ -2608,6 +2727,7 @@ PRODUCTS: list[dict] = [
             "60% layout, OptiPoint optical switches, adjustable 1.0-2.0mm actuation, "
             "per-key RGB, USB-C, aircraft-grade aluminium, n-key rollover, SteelSeries GG"
         ),
+        "image":    "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500&h=500&fit=crop",
     },
 ]
 
