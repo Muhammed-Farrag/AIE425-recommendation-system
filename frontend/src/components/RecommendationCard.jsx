@@ -10,7 +10,15 @@ export default function RecommendationCard({ item, index }) {
     'Constraint-Based': 'var(--accent-purple)',
     'Utility-Based': 'var(--accent-orange)',
     'Collaborative Filtering': 'var(--accent-pink)',
+    'CF: User-Based Cosine': 'var(--accent-pink)',
+    'CF: User-Based Pearson k-NN': '#ff6b9d',
+    'CF: Item-Based Cosine': '#f59e0b',
+    'CF: Item-Based Jaccard': '#a78bfa',
     'Content-Based': 'var(--accent-green)',
+    'Content-Based (TFIDF)': 'var(--accent-green)',
+    'Content-Based (LSA)': '#34d399',
+    'Content-Based (WORD2VEC)': '#6ee7b7',
+    'Content-Based (FEATURE)': '#10b981',
   };
   const color = methodColors[method] || 'var(--accent-blue)';
 

@@ -1,0 +1,202 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ForYouCard — Grid-optimised recommendation card
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.fyu-card {
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: all 0.4s var(--ease-out);
+  animation: fyuFadeIn 0.5s var(--ease-out) both;
+}
+
+.fyu-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  background: var(--bg-card-hover);
+  border-color: rgba(244, 114, 182, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(244, 114, 182, 0.1);
+}
+
+/* ── Image ────────────────────────────────────────────────────── */
+.fyu-image-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: var(--bg-tertiary);
+}
+
+.fyu-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.fyu-card:hover .fyu-image {
+  transform: scale(1.08);
+}
+
+/* ── Score Badge ──────────────────────────────────────────────── */
+.fyu-score-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+}
+
+.fyu-score-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  line-height: 1;
+}
+
+.fyu-score-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ── Rank Badge ───────────────────────────────────────────────── */
+.fyu-rank {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+/* ── Method Pill ──────────────────────────────────────────────── */
+.fyu-method-pill {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid;
+  white-space: nowrap;
+  max-width: calc(100% - 20px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Info ─────────────────────────────────────────────────────── */
+.fyu-info {
+  padding: 1rem 1.2rem 1.2rem;
+}
+
+.fyu-brand {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
+
+.fyu-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.fyu-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fyu-price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.fyu-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ── Explanation Overlay ──────────────────────────────────────── */
+.fyu-explanation-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease-out);
+  border-radius: var(--radius-lg);
+}
+
+.fyu-explanation-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fyu-explanation-content {
+  text-align: center;
+}
+
+.fyu-explanation-icon {
+  color: var(--accent-cyan);
+  margin-bottom: 8px;
+}
+
+.fyu-explanation-content p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ── Animation ────────────────────────────────────────────────── */
+@keyframes fyuFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

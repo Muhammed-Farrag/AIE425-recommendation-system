@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { PackageSearch, Sparkles, BrainCircuit } from 'lucide-react';
+import { PackageSearch, Heart, BrainCircuit } from 'lucide-react';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const links = [
     { to: '/', label: 'Products', icon: <PackageSearch size={18} /> },
-    { to: '/recommendations', label: 'Recommend', icon: <Sparkles size={18} /> },
+    { to: '/for-you', label: 'For You', icon: <Heart size={18} /> },
     { to: '/knowledge-based', label: 'Knowledge AI', icon: <BrainCircuit size={18} /> },
   ];
 

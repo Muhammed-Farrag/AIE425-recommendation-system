@@ -40,6 +40,14 @@ class RecommendationInput(BaseModel):
     brand: Optional[str] = Field(None, description="Preferred brand")
     min_rating: Optional[float] = Field(None, ge=1.0, le=5.0, description="Minimum acceptable rating")
     preferences: Optional[dict] = Field(default_factory=dict, description="Additional user preferences")
+    cf_method: Optional[str] = Field(
+        "user_cosine",
+        description="Collaborative filtering sub-method: user_cosine, user_pearson, item_cosine, item_jaccard",
+    )
+    cb_method: Optional[str] = Field(
+        "tfidf",
+        description="Content-based sub-method: tfidf, lsa, word2vec, feature",
+    )
 
 
 class RecommendedProduct(BaseModel):
