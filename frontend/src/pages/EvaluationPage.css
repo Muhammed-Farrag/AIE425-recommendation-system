@@ -1,0 +1,322 @@
+/* ── Layout ─────────────────────────────────────────────────────── */
+.ev-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Header ─────────────────────────────────────────────────────── */
+.ev-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.ev-header-icon {
+  color: var(--accent-purple);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.ev-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 900;
+  margin: 0 0 0.4rem;
+  line-height: 1.1;
+}
+
+.ev-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0;
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+/* ── Summary cards ──────────────────────────────────────────────── */
+.ev-summary-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.ev-summary-card {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border-radius: 1rem;
+}
+
+.ev-summary-icon {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.ev-summary-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ev-summary-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.ev-summary-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.ev-summary-unit {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 0.1rem;
+  color: var(--text-secondary);
+}
+
+.ev-summary-note {
+  font-size: 0.75rem;
+  color: var(--text-muted, var(--text-secondary));
+  opacity: 0.7;
+  margin-top: 0.15rem;
+}
+
+/* ── Section ────────────────────────────────────────────────────── */
+.ev-section {
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ev-section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ev-section-icon {
+  flex-shrink: 0;
+}
+
+.ev-section-desc {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Chart ──────────────────────────────────────────────────────── */
+.ev-chart-wrap {
+  width: 100%;
+}
+
+.ev-radar-wrap {
+  width: 100%;
+}
+
+/* ── Table ──────────────────────────────────────────────────────── */
+.ev-table-wrap {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+}
+
+.ev-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.ev-table th {
+  text-align: left;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+.ev-table td {
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.ev-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ev-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.ev-row-best {
+  background: rgba(99, 102, 241, 0.06) !important;
+}
+
+.ev-method-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.ev-badge-best {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(99, 102, 241, 0.2);
+  color: #a78bfa;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ev-table-footnote {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  margin: 0.5rem 0 0;
+}
+
+/* ── Tooltip ────────────────────────────────────────────────────── */
+.ev-tooltip {
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.6rem;
+  font-size: 0.85rem;
+  min-width: 140px;
+}
+
+.ev-tooltip-label {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--text-primary);
+}
+
+/* ── Analysis ───────────────────────────────────────────────────── */
+.ev-analysis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.ev-analysis-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 0.9rem;
+  padding: 1.25rem;
+}
+
+.ev-analysis-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 0.7rem;
+  color: var(--text-primary);
+}
+
+.ev-analysis-card p,
+.ev-analysis-card li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.ev-analysis-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.ev-analysis-card li strong {
+  color: var(--text-primary);
+}
+
+/* ── Loading / Error ────────────────────────────────────────────── */
+.ev-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 60vh;
+  color: var(--text-secondary);
+}
+
+.ev-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--accent-purple);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.ev-loading-sub {
+  font-size: 0.82rem;
+  opacity: 0.6;
+}
+
+.ev-error {
+  padding: 2rem;
+  border-radius: 1rem;
+  color: var(--accent-orange, #f97316);
+  text-align: center;
+  margin-top: 4rem;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .ev-summary-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ev-analysis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .ev-page {
+    padding: 1rem;
+  }
+  .ev-summary-row {
+    grid-template-columns: 1fr;
+  }
+  .ev-section {
+    padding: 1.25rem;
+  }
+}

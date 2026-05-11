@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import ForYouCard from '../components/ForYouCard';
-import { getKnowledgeBasedRecommendations, compareKnowledgeBased } from '../services/api';
 import {
-  BrainCircuit, GitCompare, Zap, ChevronDown, Ruler, Scale, BarChart2, UserCheck,
+  getContentBasedRecommendations,
+  compareContentBased,
+} from '../services/api';
+import {
+  FileText, GitCompare, Zap, ChevronDown, Layers, UserCheck,
 } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, CartesianGrid } from 'recharts';
 import './RecommendPage.css';
@@ -18,33 +21,27 @@ const USERS = [
   { id: 'U036', label: 'Brooke — Casual Consumer' },
 ];
 
-const KB_METHODS = [
-  { key: 'rule',       label: 'Rule-Based',        color: '#06b6d4', desc: 'Strict filtering: products must satisfy all hard constraints.' },
-  { key: 'constraint', label: 'Constraint-Based',   color: '#8b5cf6', desc: 'Hard + soft constraints ranked by weighted preference scores.' },
-  { key: 'utility',    label: 'Utility-Based',      color: '#f97316', desc: 'Scores every product by a weighted utility function (price, rating, brand).' },
+const CB_METHODS = [
+  { key: 'tfidf',   label: 'TF-IDF',        color: '#10b981', desc: 'Term frequency–inverse document frequency on product text.' },
+  { key: 'lsa',     label: 'LSA',            color: '#34d399', desc: 'Latent Semantic Analysis for dimensionality-reduced topic similarity.' },
+  { key: 'word2vec',label: 'Word2Vec',       color: '#6ee7b7', desc: 'Dense word embeddings capturing semantic meaning of product descriptions.' },
+  { key: 'feature', label: 'Feature-Based',  color: '#a7f3d0', desc: 'Structured attribute matching (brand, category, specifications).' },
 ];
 
-const KB_COMPARE_KEYS = {
-  rule_based:       'Rule-Based',
-  constraint_based: 'Constraint-Based',
-  utility_based:    'Utility-Based',
+const CB_COMPARE_KEYS = {
+  tfidf:    'TF-IDF',
+  lsa:      'LSA',
+  word2vec: 'Word2Vec',
+  feature:  'Feature-Based',
 };
 
-const KB_METHOD_MAP = {
-  rule_based: 0,
-  constraint_based: 1,
-  utility_based: 2,
-};
-
-export default function KnowledgeBasedPage() {
+export default function ContentBasedPage() {
   const [userId, setUserId] = useState('U001');
-  const [method, setMethod] = useState('rule');
+  const [method, setMethod] = useState('tfidf');
   const [results, setResults] = useState(null);
   const [compareResults, setCompareResults] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showCompare, setShowCompare] = useState(false);
-
-  const buildInput = () => ({ user_id: userId });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,7 +50,7 @@ export default function KnowledgeBasedPage() {
     setCompareResults(null);
     setShowCompare(false);
     try {
-      const data = await getKnowledgeBasedRecommendations(method, buildInput());
+      const data = await getContentBasedRecommendations(method, { user_id: userId });
       setResults(data);
     } catch (err) {
       console.error(err);
@@ -66,7 +63,7 @@ export default function KnowledgeBasedPage() {
     setResults(null);
     setCompareResults(null);
     try {
-      const data = await compareKnowledgeBased(buildInput());
+      const data = await compareContentBased({ user_id: userId });
       setCompareResults(data);
       setShowCompare(true);
     } catch (err) {
@@ -77,26 +74,26 @@ export default function KnowledgeBasedPage() {
 
   const getChartData = () => {
     if (!compareResults) return [];
-    return Object.entries(KB_COMPARE_KEYS).map(([key, label]) => {
+    return Object.entries(CB_COMPARE_KEYS).map(([key, label]) => {
       const recs = compareResults[key]?.recommendations ?? [];
       const avgScore = recs.length
-        ? +(recs.reduce((s, r) => s + r.score, 0) / recs.length).toFixed(2)
+        ? +(recs.reduce((s, r) => s + r.score, 0) / recs.length * 100).toFixed(1)
         : 0;
       return { method: label, avgScore };
     });
   };
 
-  const currentMethod = KB_METHODS.find((m) => m.key === method);
+  const currentMethod = CB_METHODS.find((m) => m.key === method);
 
   return (
     <div className="rp-page">
       <div className="rp-header animate-in">
         <h1 className="rp-title">
-          <BrainCircuit className="inline-icon" size={32} />
-          <span className="gradient-text">Knowledge-Based AI</span>
+          <FileText className="inline-icon" size={32} />
+          <span className="gradient-text-green">Content-Based</span>
         </h1>
         <p className="rp-subtitle">
-          Rule-driven reasoning over product attributes. No historical ratings needed — pure logic and constraints power every recommendation.
+          Find products similar to what you've loved before. Powered by text similarity, semantic embeddings, and feature matching.
         </p>
       </div>
 
@@ -118,9 +115,9 @@ export default function KnowledgeBasedPage() {
 
           {/* Method selector */}
           <div className="rp-section glass">
-            <h2 className="rp-section-title"><BrainCircuit size={14} className="inline-icon" /> Algorithm</h2>
+            <h2 className="rp-section-title"><Layers size={14} className="inline-icon" /> Algorithm</h2>
             <div className="rp-method-list">
-              {KB_METHODS.map((m) => (
+              {CB_METHODS.map((m) => (
                 <button
                   key={m.key}
                   className={`rp-method-btn ${method === m.key ? 'active' : ''}`}
@@ -139,13 +136,13 @@ export default function KnowledgeBasedPage() {
 
           {/* Actions */}
           <form onSubmit={handleSubmit} className="rp-actions">
-            <button type="submit" className="rp-submit-btn" disabled={loading}>
+            <button type="submit" className="rp-submit-btn rp-submit-green" disabled={loading}>
               <Zap size={16} />
               {loading && !showCompare ? 'Loading...' : 'Get Recommendations'}
             </button>
             <button type="button" className="rp-compare-btn" onClick={handleCompare} disabled={loading}>
               <GitCompare size={16} />
-              Compare All 3 Methods
+              Compare All 4 Methods
             </button>
           </form>
         </aside>
@@ -154,8 +151,8 @@ export default function KnowledgeBasedPage() {
         <main className="rp-results">
           {loading && (
             <div className="rp-loading">
-              <div className="rp-spinner" />
-              <p>{showCompare ? 'Running all 3 KB methods...' : `Running ${currentMethod?.label}...`}</p>
+              <div className="rp-spinner rp-spinner-green" />
+              <p>{showCompare ? 'Running all 4 CB methods...' : `Running ${currentMethod?.label}...`}</p>
             </div>
           )}
 
@@ -177,44 +174,43 @@ export default function KnowledgeBasedPage() {
           {/* Compare mode */}
           {compareResults && showCompare && !loading && (
             <div className="animate-in">
-              <h2 className="rp-compare-title"><GitCompare size={20} /> Comparing All 3 KB Methods</h2>
+              <h2 className="rp-compare-title"><GitCompare size={20} /> Comparing All 4 CB Methods</h2>
               <div className="rp-compare-scroll">
-                <div className="rp-compare-grid" style={{ gridTemplateColumns: 'repeat(3, 220px)' }}>
-                  {Object.entries(KB_COMPARE_KEYS).map(([key, label]) => {
-                    const data = compareResults[key];
-                    if (!data) return null;
-                    const mi = KB_METHOD_MAP[key];
-                    return (
-                      <div key={key} className="rp-compare-col glass">
-                        <div className="rp-compare-col-header" style={{ borderColor: KB_METHODS[mi]?.color }}>
-                          <span className="rp-col-dot" style={{ background: KB_METHODS[mi]?.color }} />
-                          <span className="rp-col-label">{label}</span>
-                          <span className="rp-col-count">{data.total_results} results</span>
-                        </div>
-                        {data.recommendations.slice(0, 5).map((item, i) => (
-                          <div key={i} className="rp-compare-item">
-                            <span className="rp-compare-rank">#{i + 1}</span>
-                            <div className="rp-compare-info">
-                              <p className="rp-compare-name">{item.product.name}</p>
-                              <div className="rp-compare-meta">
-                                <span>${item.product.price?.toFixed(0)}</span>
-                                <span>★ {item.product.rating}</span>
-                                <span style={{ color: KB_METHODS[mi]?.color }}>
-                                  {item.score.toFixed(1)}
-                                </span>
-                              </div>
+              <div className="rp-compare-grid" style={{ gridTemplateColumns: 'repeat(4, 220px)' }}>
+                {Object.entries(CB_COMPARE_KEYS).map(([key, label], ci) => {
+                  const data = compareResults[key];
+                  if (!data) return null;
+                  return (
+                    <div key={key} className="rp-compare-col glass">
+                      <div className="rp-compare-col-header" style={{ borderColor: CB_METHODS[ci]?.color }}>
+                        <span className="rp-col-dot" style={{ background: CB_METHODS[ci]?.color }} />
+                        <span className="rp-col-label">{label}</span>
+                        <span className="rp-col-count">{data.total_results} results</span>
+                      </div>
+                      {data.recommendations.slice(0, 5).map((item, i) => (
+                        <div key={i} className="rp-compare-item">
+                          <span className="rp-compare-rank">#{i + 1}</span>
+                          <div className="rp-compare-info">
+                            <p className="rp-compare-name">{item.product.name}</p>
+                            <div className="rp-compare-meta">
+                              <span>${item.product.price?.toFixed(0)}</span>
+                              <span>★ {item.product.rating}</span>
+                              <span style={{ color: CB_METHODS[ci]?.color }}>
+                                {(item.score * 100).toFixed(0)}%
+                              </span>
                             </div>
                           </div>
-                        ))}
-                      </div>
-                    );
-                  })}
-                </div>
+                        </div>
+                      ))}
+                    </div>
+                  );
+                })}
+              </div>
               </div>
 
               {/* Chart */}
               <div className="rp-chart glass">
-                <h3 className="rp-chart-title"><BarChart2 size={18} /> Average Score per Method</h3>
+                <h3 className="rp-chart-title"><GitCompare size={18} /> Average Similarity Score per Method</h3>
                 <ResponsiveContainer width="100%" height={240}>
                   <BarChart data={getChartData()} margin={{ top: 10, right: 20, left: 0, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
@@ -222,7 +218,7 @@ export default function KnowledgeBasedPage() {
                     <YAxis tick={{ fill: 'rgba(255,255,255,0.5)', fontSize: 11 }} />
                     <Tooltip contentStyle={{ background: 'rgba(10,10,15,0.95)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8 }} />
                     <Legend />
-                    <Bar dataKey="avgScore" name="Avg Score" fill="#8b5cf6" radius={[4, 4, 0, 0]} />
+                    <Bar dataKey="avgScore" name="Avg Score (0-100)" fill="#10b981" radius={[4, 4, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -232,7 +228,7 @@ export default function KnowledgeBasedPage() {
           {/* Empty state */}
           {!results && !compareResults && !loading && (
             <div className="rp-empty">
-              <BrainCircuit size={52} className="rp-empty-icon" />
+              <FileText size={52} className="rp-empty-icon" />
               <h3>Select a method and load your feed</h3>
               <p>Pick a user persona and algorithm on the left, then click "Get Recommendations".</p>
             </div>

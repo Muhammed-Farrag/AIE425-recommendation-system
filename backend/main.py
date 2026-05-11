@@ -11,7 +11,7 @@ Serves as the central hub connecting:
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.routers import products, users, recommender
+from backend.routers import products, users, recommender, evaluation
 
 # ── Application Setup ────────────────────────────────────────────
 app = FastAPI(
@@ -33,6 +33,7 @@ app.add_middleware(
 app.include_router(products.router)
 app.include_router(users.router)
 app.include_router(recommender.router)
+app.include_router(evaluation.router)
 
 
 # ── Health Check ─────────────────────────────────────────────────

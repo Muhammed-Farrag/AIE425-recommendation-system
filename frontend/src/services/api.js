@@ -55,4 +55,8 @@ export const getContentBasedRecommendations = (cbMethod, inputData) =>
 export const compareContentBased = (inputData) =>
   api.post('/recommend/content-based-compare', inputData).then(r => r.data);
 
+// ── Evaluation ──────────────────────────────────────────────────
+export const getEvaluationMetrics = () =>
+  api.get('/evaluate/metrics').then(r => r.data);
+
 export default api;

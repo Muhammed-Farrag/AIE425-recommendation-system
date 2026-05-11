@@ -2,8 +2,10 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import ProductDetailPage from './pages/ProductDetailPage';
-import ForYouPage from './pages/ForYouPage';
+import CollaborativePage from './pages/CollaborativePage';
+import ContentBasedPage from './pages/ContentBasedPage';
 import KnowledgeBasedPage from './pages/KnowledgeBasedPage';
+import EvaluationPage from './pages/EvaluationPage';
 
 export default function App() {
   return (
@@ -12,10 +14,13 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/product/:id" element={<ProductDetailPage />} />
-        <Route path="/for-you" element={<ForYouPage />} />
+        <Route path="/collaborative" element={<CollaborativePage />} />
+        <Route path="/content-based" element={<ContentBasedPage />} />
         <Route path="/knowledge-based" element={<KnowledgeBasedPage />} />
-        {/* Backwards compat redirect */}
-        <Route path="/recommendations" element={<Navigate to="/for-you" replace />} />
+        <Route path="/evaluation" element={<EvaluationPage />} />
+        {/* Legacy redirects */}
+        <Route path="/for-you" element={<Navigate to="/collaborative" replace />} />
+        <Route path="/recommendations" element={<Navigate to="/collaborative" replace />} />
       </Routes>
     </BrowserRouter>
   );

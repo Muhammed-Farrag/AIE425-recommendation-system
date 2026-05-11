@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { PackageSearch, Heart, BrainCircuit } from 'lucide-react';
+import { PackageSearch, Users, FileText, BrainCircuit, BarChart2 } from 'lucide-react';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -8,8 +8,10 @@ export default function Navbar() {
 
   const links = [
     { to: '/', label: 'Products', icon: <PackageSearch size={18} /> },
-    { to: '/for-you', label: 'For You', icon: <Heart size={18} /> },
+    { to: '/collaborative', label: 'Collaborative', icon: <Users size={18} /> },
+    { to: '/content-based', label: 'Content-Based', icon: <FileText size={18} /> },
     { to: '/knowledge-based', label: 'Knowledge AI', icon: <BrainCircuit size={18} /> },
+    { to: '/evaluation', label: 'Evaluation', icon: <BarChart2 size={18} /> },
   ];
 
   return (
